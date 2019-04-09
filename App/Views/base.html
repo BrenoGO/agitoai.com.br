@@ -1,15 +1,20 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="base.css">
+    {% block css %}{% endblock %}
 </head>
 <body>
+    <header>
+        <img src="/agitoai.com.br/public/imgs/header_img.jpg" id="header_img">
+    </header>
     <nav>
-        <a href="/PHP_MVC/public/">Home</a>
-        <a href="/PHP_MVC/public/posts/index">Posts</a>
+        <a href="/agitoai.com.br/public/">Home</a>
+        <a href="/agitoai.com.br/public/posts/index">Posts</a>
     </nav>
     {% block body %}
     {% endblock %}

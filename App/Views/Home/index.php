@@ -1,17 +1,27 @@
-<!DOCTYPE <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home PHP MVC</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-    <h1>Welcome <?php echo htmlspecialchars($name); ?></h1>
-    <ul>
-        <?php foreach($colours as $color):?>
-        <li><?php echo htmlspecialchars($color); ?></li>
-        <?php endforeach; ?>
-    </ul>
-</body>
-</html>
+<?php
+
+include '../App/Views/inithead.php';
+echo '
+<title>Home</title>
+<script src="/agitoai.com.br/App/Views/Home/home.js"></script>
+';
+include '../App/Views/endhead.php';
+echo '
+<div id="titulo">
+<h1>Experiência Agito</h1>
+<p>O serviço funciona da seguinte maneira: </p>
+<p>- Você preenche o cadastro com seus dados;</p>
+<p>- Nosso time de consultoras analisará o seu perfil;</p>
+<p>- Com peças selecionadas, entraremos em contato com você;</p>
+<p>E você não paga nada pelo serviço de entrega no Vale do Aço.</p>
+<p>É só dar o clique para acessar nossos formulários e solicitar este novíssimo serviço! </p>
+<p id="obrigatorio">*Obrigatório</p>
+</div>
+<div id="boxEmail">
+<h2>Endereço de E-mail<span class="pointObrigatorio">*</span></h2>
+<input type="email" id="seuemail" name="seuemail" placeholder="Seu E-mail"/>
+<p id="txtPergObri">Esta pergunta é obrigatória</p>
+</div>
+<span class="button butProx" name="butProx1" id="butProx1">PRÓXIMA</span>
+';
+include '../App/Views/footer.php';

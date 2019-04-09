@@ -24,9 +24,9 @@ class Router
 
         //Add start and end delimiters, and case insensitive flag
         $route = '/^'.$route.'$/i';
-        
         $this->routes[$route] = $params;
     }
+    
     public function getRoutes()
     {
         return $this->routes;
@@ -59,9 +59,9 @@ class Router
             $controller = $this->getNamespace().$controller;
             if(class_exists($controller)) {
                 $controller_object = new $controller($this->params);
-
                 $action = $this->params['action'];
                 $action = $this->convertToCamelCase($action);
+                
                 if (preg_match('/action$/i', $action) == 0) {
                     $controller_object->$action();
                 } else {

@@ -4,4 +4,4 @@ RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule ^(.*)$ PHP_MVC/public/index.php?$1 [L,QSA]
+RewriteRule ^(.*)$ agitoai.com.br/public/index.php?$1 [L,QSA]

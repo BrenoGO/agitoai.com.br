@@ -8,5 +8,5 @@ class Config
     const DB_NAME = 'MVC';
     const DB_USER = 'root';
     const DB_PASS = 'root';
-    const SHOW_ERRORS = false;
+    const SHOW_ERRORS = true;
 }

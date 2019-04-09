@@ -15,10 +15,7 @@ class Home extends \Core\Controller
         //     'name' => 'Breno',
         //     'colours' => ['red', 'blue', 'black']
         // ]);
-        View::renderTemplate('Home/index.html', [
-                'name' => 'Breno',
-                'colours' => ['red', 'blue', 'black']
-            ]);
+        View::render('Home/index.php');
     }
     protected function after()
     {
