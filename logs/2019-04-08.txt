@@ -1,0 +1,56 @@
+[08-Apr-2019 21:47:19 UTC] Uncaught exception: 'Exception' with message 'No route matched'
+Stack trace: #0 /Applications/MAMP/htdocs/PHP_MVC/public/index.php(19): Core\Router->dispatch('products')
+#1 {main}
+Thrown in /Applications/MAMP/htdocs/PHP_MVC/Core/Router.php' on line 74
+[08-Apr-2019 21:47:34 UTC] Uncaught exception: 'Exception' with message 'No route matched'
+Stack trace: #0 /Applications/MAMP/htdocs/PHP_MVC/public/index.php(19): Core\Router->dispatch('products')
+#1 {main}
+Thrown in /Applications/MAMP/htdocs/PHP_MVC/Core/Router.php' on line 74
+[08-Apr-2019 21:48:06 UTC] Uncaught exception: 'Exception' with message 'No route matched'
+Stack trace: #0 /Applications/MAMP/htdocs/PHP_MVC/public/index.php(19): Core\Router->dispatch('products')
+#1 {main}
+Thrown in /Applications/MAMP/htdocs/PHP_MVC/Core/Router.php' on line 74
+
+
+[08-Apr-2019 21:48:36 UTC] 
+
+Uncaught exception: 'Exception' with message 'No route matched'
+Stack trace: #0 /Applications/MAMP/htdocs/PHP_MVC/public/index.php(19): Core\Router->dispatch('products')
+#1 {main}
+Thrown in /Applications/MAMP/htdocs/PHP_MVC/Core/Router.php' on line 74
+[08-Apr-2019 21:48:43 UTC] 
+
+Uncaught exception: 'Exception' with message 'No route matched'
+Stack trace: #0 /Applications/MAMP/htdocs/PHP_MVC/public/index.php(19): Core\Router->dispatch('products')
+#1 {main}
+Thrown in /Applications/MAMP/htdocs/PHP_MVC/Core/Router.php' on line 74
+[08-Apr-2019 22:08:46 UTC] Uncaught exception: 'Exception' with message 'No route matched'
+Stack trace: #0 /Applications/MAMP/htdocs/PHP_MVC/public/index.php(19): Core\Router->dispatch('products')
+#1 {main}
+Thrown in /Applications/MAMP/htdocs/PHP_MVC/Core/Router.php' on line 74
+[08-Apr-2019 22:08:46 UTC] PHP Fatal error:  Uncaught Twig\Error\SyntaxError: Unexpected "end" tag (expecting closing tag for the "block" tag defined near line 4). in /Applications/MAMP/htdocs/PHP_MVC/App/Views/404.html:6
+Stack trace:
+#0 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/TokenParser/BlockTokenParser.php(45): Twig\Parser->subparse(Array, true)
+#1 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Parser.php(185): Twig\TokenParser\BlockTokenParser->parse(Object(Twig\Token))
+#2 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Parser.php(98): Twig\Parser->subparse(NULL, false)
+#3 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Environment.php(569): Twig\Parser->parse(Object(Twig\TokenStream))
+#4 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Environment.php(601): Twig\Environment->parse(Object(Twig\TokenStream))
+#5 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#6 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Environment. in /Applications/MAMP/htdocs/PHP_MVC/App/Views/404.html on line 6
+[08-Apr-2019 22:09:11 UTC] Uncaught exception: 'Exception' with message 'No route matched'
+Stack trace: #0 /Applications/MAMP/htdocs/PHP_MVC/public/index.php(19): Core\Router->dispatch('products')
+#1 {main}
+Thrown in /Applications/MAMP/htdocs/PHP_MVC/Core/Router.php' on line 74
+[08-Apr-2019 22:09:11 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "" (looked into: /Applications/MAMP/htdocs/PHP_MVC/App/Views). in /Applications/MAMP/htdocs/PHP_MVC/App/Views/404.html:1
+Stack trace:
+#0 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Loader/FilesystemLoader.php(148): Twig\Loader\FilesystemLoader->findTemplate('')
+#1 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Environment.php(300): Twig\Loader\FilesystemLoader->getCacheKey(NULL)
+#2 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Environment.php(382): Twig\Environment->getTemplateClass(NULL)
+#3 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Template.php(321): Twig\Environment->loadTemplate(NULL, NULL)
+#4 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Environment.php(418) : eval()'d code(35): Twig\Template->loadTemplate(NULL, '404.html', 1)
+#5 /Applications/MAMP/htdocs/PHP_MVC/vendor/twig/twig/src/Template.php(99): __TwigTemplate_5efd5f6a1acc6affb933a058750acc7d64a20d838013d9b64975a10e44810598->doGetParent(Array)
+ in /Applications/MAMP/htdocs/PHP_MVC/App/Views/404.html on line 1
+[08-Apr-2019 22:09:41 UTC] Uncaught exception: 'Exception' with message 'No route matched'
+Stack trace: #0 /Applications/MAMP/htdocs/PHP_MVC/public/index.php(19): Core\Router->dispatch('products')
+#1 {main}
+Thrown in /Applications/MAMP/htdocs/PHP_MVC/Core/Router.php' on line 74
