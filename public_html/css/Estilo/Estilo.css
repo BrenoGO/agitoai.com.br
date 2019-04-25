@@ -1,0 +1,47 @@
+.imgInForm {
+    width: 100%;
+}
+.scaleInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left:20%;
+    margin-right:20%;
+    font-size: 18px;
+}
+.chooseNumber {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5%;
+}
+.scaleNumber {
+    margin-left:3%;
+}
+.imgEstampas{
+    width: 90%;
+    align-items: center;
+}
+.rowEstampas{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.divEstampa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+@media screen and (max-width: 1000px) {
+    .rowEstampas {
+        flex-direction: column;
+        width: 100%;
+    }
+    .divEstampa {
+        width: 100%;
+    }
+}

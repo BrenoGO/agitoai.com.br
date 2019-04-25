@@ -1,0 +1,78 @@
+[11-Apr-2019 21:06:27 UTC] PHP Warning:  Uncaught ErrorException: require(../Views/inithead.php): failed to open stream: No such file or directory in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php:3
+Stack trace:
+#0 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(3): Core\Error::errorHandler(2, 'require(../View...', '/home/u35588116...', 3, Array)
+#1 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(3): require()
+#2 /home/u355881160/domains/agitoai.com.br/Core/View.php(14): require('/home/u35588116...')
+#3 /home/u355881160/domains/agitoai.com.br/App/Controllers/Home.php(18): Core\View::render('Home/index.php')
+#4 [internal function]: App\Controllers\Home->indexAction()
+#5 /home/u355881160/domains/agitoai.com.br/Core/Controller.php(23): call_user_func_array(Array, Array)
+#6 /home/u355881160/domains/agitoai.com.br/Core/Router.php(66): Core\Controller->__call('index', Array)
+#7 /home/u355881160/domains/agitoai.com.br/public_html/index.php(20): Core\Router->dispatch('')
+#8 {main}
+  thrown in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 3
+[11-Apr-2019 21:06:27 UTC] PHP Fatal error:  Core\View::main(): Failed opening required '../Views/inithead.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 3
+[11-Apr-2019 21:07:34 UTC] PHP Warning:  Uncaught ErrorException: require(../Views/inithead.php): failed to open stream: No such file or directory in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php:3
+Stack trace:
+#0 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(3): Core\Error::errorHandler(2, 'require(../View...', '/home/u35588116...', 3, Array)
+#1 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(3): require()
+#2 /home/u355881160/domains/agitoai.com.br/Core/View.php(14): require('/home/u35588116...')
+#3 /home/u355881160/domains/agitoai.com.br/App/Controllers/Home.php(18): Core\View::render('Home/index.php')
+#4 [internal function]: App\Controllers\Home->indexAction()
+#5 /home/u355881160/domains/agitoai.com.br/Core/Controller.php(23): call_user_func_array(Array, Array)
+#6 /home/u355881160/domains/agitoai.com.br/Core/Router.php(66): Core\Controller->__call('index', Array)
+#7 /home/u355881160/domains/agitoai.com.br/public_html/index.php(20): Core\Router->dispatch('')
+#8 {main}
+  thrown in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 3
+[11-Apr-2019 21:07:34 UTC] PHP Fatal error:  Core\View::main(): Failed opening required '../Views/inithead.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 3
+[11-Apr-2019 21:07:36 UTC] PHP Warning:  Uncaught ErrorException: require(../Views/inithead.php): failed to open stream: No such file or directory in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php:3
+Stack trace:
+#0 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(3): Core\Error::errorHandler(2, 'require(../View...', '/home/u35588116...', 3, Array)
+#1 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(3): require()
+#2 /home/u355881160/domains/agitoai.com.br/Core/View.php(14): require('/home/u35588116...')
+#3 /home/u355881160/domains/agitoai.com.br/App/Controllers/Home.php(18): Core\View::render('Home/index.php')
+#4 [internal function]: App\Controllers\Home->indexAction()
+#5 /home/u355881160/domains/agitoai.com.br/Core/Controller.php(23): call_user_func_array(Array, Array)
+#6 /home/u355881160/domains/agitoai.com.br/Core/Router.php(66): Core\Controller->__call('index', Array)
+#7 /home/u355881160/domains/agitoai.com.br/public_html/index.php(20): Core\Router->dispatch('')
+#8 {main}
+  thrown in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 3
+[11-Apr-2019 21:07:36 UTC] PHP Fatal error:  Core\View::main(): Failed opening required '../Views/inithead.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 3
+[11-Apr-2019 21:08:02 UTC] PHP Warning:  Uncaught ErrorException: require(../Views/endhead.php): failed to open stream: No such file or directory in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php:9
+Stack trace:
+#0 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(9): Core\Error::errorHandler(2, 'require(../View...', '/home/u35588116...', 9, Array)
+#1 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(9): require()
+#2 /home/u355881160/domains/agitoai.com.br/Core/View.php(14): require('/home/u35588116...')
+#3 /home/u355881160/domains/agitoai.com.br/App/Controllers/Home.php(18): Core\View::render('Home/index.php')
+#4 [internal function]: App\Controllers\Home->indexAction()
+#5 /home/u355881160/domains/agitoai.com.br/Core/Controller.php(23): call_user_func_array(Array, Array)
+#6 /home/u355881160/domains/agitoai.com.br/Core/Router.php(66): Core\Controller->__call('index', Array)
+#7 /home/u355881160/domains/agitoai.com.br/public_html/index.php(20): Core\Router->dispatch('')
+#8 {main}
+  thrown in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 9
+[11-Apr-2019 21:08:02 UTC] PHP Fatal error:  Core\View::main(): Failed opening required '../Views/endhead.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 9
+[11-Apr-2019 21:08:38 UTC] PHP Warning:  Uncaught ErrorException: require(../Views/endhead.php): failed to open stream: No such file or directory in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php:9
+Stack trace:
+#0 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(9): Core\Error::errorHandler(2, 'require(../View...', '/home/u35588116...', 9, Array)
+#1 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(9): require()
+#2 /home/u355881160/domains/agitoai.com.br/Core/View.php(14): require('/home/u35588116...')
+#3 /home/u355881160/domains/agitoai.com.br/App/Controllers/Home.php(18): Core\View::render('Home/index.php')
+#4 [internal function]: App\Controllers\Home->indexAction()
+#5 /home/u355881160/domains/agitoai.com.br/Core/Controller.php(23): call_user_func_array(Array, Array)
+#6 /home/u355881160/domains/agitoai.com.br/Core/Router.php(66): Core\Controller->__call('index', Array)
+#7 /home/u355881160/domains/agitoai.com.br/public_html/index.php(20): Core\Router->dispatch('')
+#8 {main}
+  thrown in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 9
+[11-Apr-2019 21:08:38 UTC] PHP Fatal error:  Core\View::main(): Failed opening required '../Views/endhead.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 9
+[11-Apr-2019 21:08:46 UTC] PHP Warning:  Uncaught ErrorException: require(../Views/footer.php): failed to open stream: No such file or directory in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php:25
+Stack trace:
+#0 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(25): Core\Error::errorHandler(2, 'require(../View...', '/home/u35588116...', 25, Array)
+#1 /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php(25): require()
+#2 /home/u355881160/domains/agitoai.com.br/Core/View.php(14): require('/home/u35588116...')
+#3 /home/u355881160/domains/agitoai.com.br/App/Controllers/Home.php(18): Core\View::render('Home/index.php')
+#4 [internal function]: App\Controllers\Home->indexAction()
+#5 /home/u355881160/domains/agitoai.com.br/Core/Controller.php(23): call_user_func_array(Array, Array)
+#6 /home/u355881160/domains/agitoai.com.br/Core/Router.php(66): Core\Controller->__call('index', Array)
+#7 /home/u355881160/domains/agitoai.com.br/public_html/index.php(20): Core\Router->dispatch('')
+#8 {main}
+  thrown in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 25
+[11-Apr-2019 21:08:46 UTC] PHP Fatal error:  Core\View::main(): Failed opening required '../Views/footer.php' (include_path='.:/opt/alt/php70/usr/share/pear') in /home/u355881160/domains/agitoai.com.br/App/Views/Home/index.php on line 25

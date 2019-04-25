@@ -5,6 +5,9 @@ $(document).ready(() => {
         const tipo_pessoa = e.currentTarget.value;
         PFouPJ(tipo_pessoa);
     });
+    $('[type="date"]').on('keyup', e=> {
+        formatar(`#${e.currentTarget.id}`,'##/##/####', e.currentTarget.value);
+    });
 });
 const funcTypeDate = () => {
     if ( $('[type="date"]').prop('type') != 'date' ) {
@@ -57,3 +60,11 @@ const pointThousants = number => {
     }
     return(number);
 };
+function formatar(element, mascara, text){
+    const i = text.length;
+    const padrao = '#';
+    const test = mascara.substring(i)
+    if (test.substring(0,1) != padrao){
+        $(element).val(text+test.substring(0,1));
+    }
+}

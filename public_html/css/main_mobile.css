@@ -1,0 +1,17 @@
+@media screen and (max-width: 1000px) {
+    header {
+        background-image: url("/imgs/header_ops_mobile.png");
+        height: 150px;
+    }
+    #quadro_central{
+        margin: -30px 10% 20px 10%;
+        padding: 10px 20px 40px 20px;
+    }
+    input[type=text], input[type=email], input[type=password] {
+        width: 85%;
+    }
+    .button {
+        padding: 5px;
+        font-size: 12px;
+    }
+}

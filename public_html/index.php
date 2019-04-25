@@ -7,8 +7,13 @@ require_once '../vendor/autoload.php';
 error_reporting(E_ALL);
 set_error_handler('Core\Error::errorHandler');
 set_exception_handler('Core\Error::exceptionHandler');
+
+date_default_timezone_set('America/Sao_Paulo');
+
+session_start();
 //Routing 
 $router = new Core\Router();
+
 
 //Add the Routes
 $router->add('', ['controller' => 'Home', 'action' => 'index']);
