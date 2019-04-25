@@ -7,14 +7,11 @@ class Home extends \Core\Controller
 {
     protected function before()
     {
-        //echo '(Before) ';
+        unset($_SESSION['email@agitoai']);
+        unset($_SESSION['id@agitoai']);
     }
     public function indexAction()
     {
-        // View::render('Home/index.php', [
-        //     'name' => 'Breno',
-        //     'colours' => ['red', 'blue', 'black']
-        // ]);
         View::render('Home/index.php');
     }
     protected function after()
