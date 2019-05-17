@@ -18,7 +18,7 @@ echo '
 </div>
 <div id="boxEmail">
 <h2>Endereço de e-mail<span class="pointObrigatorio">*</span></h2>
-<form id="homeForm" method="post" action="DadosCadastrais/Index">
+<form id="homeForm" method="post" action="/Estilo/Index">
 <input type="email" id="seuemail" name="seuemail" placeholder="Seu E-mail"/>
 <div>
 <h2 id="senhaH2">Senha<span class="pointObrigatorio">*</span></h2>

@@ -34,8 +34,7 @@ class DadosEstilo extends \Core\Model
                 }
             }
             $pecasReceber = '';
-            $totPecas = $_POST['totTipoPecas'];
-            for ($i=1; $i <= $totPecas ; $i++) { 
+            for ($i=1; $i <= 10 ; $i++) { 
                 if(isset($_POST['tipoPeca'.$i])){
                     $pecasReceber .= $_POST['tipoPeca'.$i].'/';
                 }
@@ -53,17 +52,7 @@ class DadosEstilo extends \Core\Model
                     $marcas .= $_POST['marca'.$i].'/';
                 }
             }
-            $formaCorpo = isset($_POST['formaCorpo']) ? $_POST['formaCorpo'] : '';
             $modelagemEvitaOutra = isset($_POST['modelagemEvitaOutra']) ? $_POST['modelagemEvitaOutra'] : '';
-            
-            $notaClassico = isset($_POST['notaClassico']) ? $_POST['notaClassico'] : 0;
-            $notaCriativo = isset($_POST['notaCriativo']) ? $_POST['notaCriativo'] : 0;
-            $notaElegante = isset($_POST['notaElegante']) ? $_POST['notaElegante'] : 0;
-            $notaNatural = isset($_POST['notaNatural']) ? $_POST['notaNatural'] : 0;
-            $notaModerno = isset($_POST['notaModerno']) ? $_POST['notaModerno'] : 0;
-            $notaRomantico = isset($_POST['notaRomantico']) ? $_POST['notaRomantico'] : 0;
-            $notaSexy = isset($_POST['notaSexy']) ? $_POST['notaSexy'] : 0;
-
             $db = static::getDB();
             $qr = 'SELECT * FROM estilo WHERE idUsuario = ?';
             $value = [ $_SESSION['id@agitoai'] ];
@@ -72,22 +61,22 @@ class DadosEstilo extends \Core\Model
             if($stmt->rowCount(PDO::FETCH_ASSOC) <=0){
                 //não existe a linha
                 $qr = 'INSERT INTO estilo (
-                    idUsuario, genero, altura, numCalcado, tamBlusa, tamCalca, formaCorpo,
+                    idUsuario, altura, tamBlusa, tamCalca, formaCorpo,
                     notaClassico, notaCriativo, notaElegante, notaNatural, notaModerno,
                     notaRomantico, notaSexy, estAgrada, estAgradaOutra, corEvita,
                     modelagemEvita, modelagemEvitaOutra, pecasReceber, pecasReceberOutra, ocasiao,
                     ocasiaoOutra, marcas, marcasOutra
                 ) VALUES (
-                    ?, ?, ?, ?, ?, ?, ?,
+                    ?, ?, ?, ?, ?,
                     ?, ?, ?, ?, ?,
                     ?, ?, ?, ?, ?,
                     ?, ?, ?, ?, ?,
                     ?, ?, ?
                 )';
                 $values = [
-                    $_SESSION['id@agitoai'], $_POST['genero'], $altura, $_POST['numCalcado'], $tamBlusa, $tamCalca, $formaCorpo,
-                    $notaClassico, $notaCriativo, $notaElegante, $notaNatural, $notaModerno, 
-                    $notaRomantico, $notaSexy, $estAgrada, $_POST['estAgradaOutra'], $_POST['corEvita'],
+                    $_SESSION['id@agitoai'], $_POST['altura'], $tamBlusa, $tamCalca, $_POST['formaCorpo'],
+                    $_POST['notaClassico'], $_POST['notaCriativo'], $_POST['notaElegante'], $_POST['notaNatural'], $_POST['notaModerno'], 
+                    $_POST['notaRomantico'], $_POST['notaSexy'], $estAgrada, $_POST['estAgradaOutra'], $_POST['corEvita'],
                     $modelagemEvita, $modelagemEvitaOutra, $pecasReceber, $_POST['pecasReceberOutra'], $ocasiao,
                     $_POST['ocasiaoOutra'], $marcas, $_POST['marcasOutra']
                 ];
@@ -96,16 +85,16 @@ class DadosEstilo extends \Core\Model
             } else{
                 //existe a linha
                 $qr = 'UPDATE estilo SET 
-                genero=?, altura=?, numCalcado=?, tamBlusa=?, tamCalca=?, formaCorpo=?,
+                altura=?, tamBlusa=?, tamCalca=?, formaCorpo=?,
                 notaClassico=?, notaCriativo=?, notaElegante=?, notaNatural=?, notaModerno=?,
                 notaRomantico=?, notaSexy=?, estAgrada=?, estAgradaOutra=?, corEvita=?,
                 modelagemEvita=?, modelagemEvitaOutra=?, pecasReceber=?, pecasReceberOutra=?, ocasiao=?,
                 ocasiaoOutra=?, marcas=?, marcasOutra=?
                 WHERE idUsuario = ?';
                 $values = [
-                    $_POST['genero'], $altura, $_POST['numCalcado'], $tamBlusa, $tamCalca, $formaCorpo,
-                    $notaClassico, $notaCriativo, $notaElegante, $notaNatural, $notaModerno, 
-                    $notaRomantico, $notaSexy, $estAgrada, $_POST['estAgradaOutra'], $_POST['corEvita'],
+                    $altura, $tamBlusa, $tamCalca, $_POST['formaCorpo'],
+                    $_POST['notaClassico'], $_POST['notaCriativo'], $_POST['notaElegante'], $_POST['notaNatural'], $_POST['notaModerno'], 
+                    $_POST['notaRomantico'], $_POST['notaSexy'], $estAgrada, $_POST['estAgradaOutra'], $_POST['corEvita'],
                     $modelagemEvita, $modelagemEvitaOutra, $pecasReceber, $_POST['pecasReceberOutra'], $ocasiao,
                     $_POST['ocasiaoOutra'], $marcas, $_POST['marcasOutra'],
                     $_SESSION['id@agitoai']

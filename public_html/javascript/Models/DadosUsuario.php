@@ -31,20 +31,6 @@ class DadosUsuario extends \Core\Model
             echo $e->getMessage();
         }
     }
-    public static function getUsuarioById($id)
-    {
-        try{
-            $db = static::getDB();
-            $qr = 'SELECT * FROM usuarios WHERE id = ?';
-            $value = [$id];
-            $stmt=$db->prepare($qr);
-            $stmt->execute($value);
-            $row=$stmt->fetch(PDO::FETCH_ASSOC);
-            return $row;
-        } catch(PDOException $e) {
-            echo $e->getMessage();
-        }
-    }
     public static function getEstiloUsuario($email)
     {
         try {
@@ -87,34 +73,17 @@ class DadosUsuario extends \Core\Model
             echo $e->getMessage();
         }
     }
-    public static function ifExistsById($id)
-    {
-        try {
-            $db = static::getDB();
-            $qr = 'SELECT * FROM usuarios WHERE id = ?';
-            $value = [$id];
-            $stmt=$db->prepare($qr);
-            $stmt->execute($value);
-            if($stmt->rowCount()<=0){
-                return false;
-            }else{
-                return true;
-            }	
-        } catch(PDOException $e) {
-            echo $e->getMessage();
-        }
-    }
     public static function alterarUsuario($email){
         try {
             $db = static::getDB();
             $qr = 'UPDATE usuarios SET 
                 nomeCompleto = ?, cpf = ?, dataNasc = ?, endereco = ?, 
-                num=?, bairro=?, cidade = ?, cep = ?, telefone = ?, 
+                cidade = ?, cep = ?, telefone = ?, genero = ?, 
                 outrosContatos = ?, comoContactar=?, redeSocial = ?, dataCadast = ? 
                 WHERE email = ?';
             $values = [
                 $_POST['nomeCompleto'], $_POST['cpf'], $_POST['dataNasc'], $_POST['endereco'],
-                $_POST['num'], $_POST['bairro'], $_POST['cidade'], $_POST['cep'], $_POST['telefone'],  
+                $_POST['cidade'], $_POST['cep'], $_POST['telefone'], $_POST['genero'], 
                 $_POST['outrosContatos'], $_POST['comoContactar'], $_POST['redeSocial'], date('Y-m-d'),
                 $_SESSION['email@agitoai']
             ];
@@ -125,6 +94,8 @@ class DadosUsuario extends \Core\Model
             $stmt=$db->prepare($qr);
             $stmt->execute($values);
             $ln = $stmt->fetch(PDO::FETCH_ASSOC);
+            $_SESSION['id@agitoai'] = $ln['id'];
+            $_SESSION['genero@agitoai'] = $_POST['genero'];
         } catch(PDOException $e) {
             echo $e->getMessage();
         }

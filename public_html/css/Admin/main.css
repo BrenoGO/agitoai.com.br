@@ -1,0 +1,18 @@
+body {
+    padding: 10px;
+    background-color: rgb(250, 250, 208);
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+}
+table{
+    border: 1px solid black
+}
+thead{
+    font-weight: bold;
+}
+td{
+    padding: 2px;
+    border: 1px solid black;
+}
+.tdPed{
+    text-align: center;
+}

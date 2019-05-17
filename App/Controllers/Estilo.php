@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Core\View; 
 use App\Models\DadosUsuario;
+use App\Models\Auth;
 /**
  * Posts Controller
  * 
@@ -11,11 +12,19 @@ use App\Models\DadosUsuario;
 class Estilo extends \Core\Controller
 {
     public function before() {
-        if(isset($_POST['nomeCompleto'])){
-            if(DadosUsuario::seUsuarioExiste($_SESSION['email@agitoai'])) {
-                DadosUsuario::alterarUsuario($_SESSION['email@agitoai']);
+        if(!isset($_SESSION['email@agitoai'])) {
+            if(!isset($_POST['seuemail'])){
+                echo '<script>alert("Favor fazer login..");window.location.href="/";</script>';
+                die();
+            }
+            if($_POST['isNew'] == 'true') {
+                Auth::cadastUser();
+            }
+            if(Auth::authUser()){
+                $_SESSION['email@agitoai'] = $_POST['seuemail'];
+                $_SESSION['id@agitoai'] = DadosUsuario::getIdFromEmail($_SESSION['email@agitoai']);
             } else {
-                echo '<script>alert("Para sua segurança, favor cadastrar primeiro um e-mail e senha");window.location.href="/";</script>';
+                echo '<script>alert("E-mail ou senha incorreto");window.location.href="/";</script>';
                 die();
             }
         }

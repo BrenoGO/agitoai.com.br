@@ -11,9 +11,35 @@ echo '
 <h2>Estilo!</h2>
 <p>Nesta parte iremos aprender um pouco sobre o seu estilo e seus gostos pessoais, para que assim possamos acertar mais nas escolhas que enviaremos para você!</p>
 </div>
-<form method="post" action="/Finalizar/Index" id="formEstilo">
+<form method="post" action="/DadosCadastrais/Index" id="formEstilo">
+<div class="tituloCurto">Gênero<span class="pointObrigatorio">*</span></div>
+<div class="divCheck">
+    <label for="genFem">
+        <input type="radio" name="genero" id="genFem" value="F"';
+        if( ($dadosEstilo['genero'] == 'F') || (!isset($dadosEstilo['genero'])) ){
+            echo ' checked';
+            $idGen='genFem';
+        }
+        echo '/>
+        Feminino
+    </label>
+</div>
+<div class="divCheck">
+    <label for="genMasc">
+        <input type="radio" name="genero" id="genMasc" value="M"';
+        if($dadosEstilo['genero'] == 'M'){
+            echo ' checked';
+            $idGen='genMasc';
+        }
+        echo '/>
+        Masculino
+    </label>
+</div>';
+echo '
 <label for="altura"><div class="tituloCurto">Qual a sua altura?</div></label>
 <input type="text" name="altura" id="altura" value="'.number_format($dadosEstilo['altura'],2,',','').'"/></br>
+<label for="numCalcado"><div class="tituloCurto">Qual numeração dos seus calçados?</div></label>
+<input type="text" name="numCalcado" id="numCalcado" value="'.$dadosEstilo['numCalcado'].'"/></br>
 <div class="tituloLongo">Qual tamanho de Blusa / Camisa você costuma usar?</div>
 <div class="divCheck"><input type="checkbox" name="TamBlusas34" id="TamBlusas34" value="34"';
 if(strpos($dadosEstilo['tamBlusa'],'34') !== false){echo ' checked';}
@@ -84,47 +110,49 @@ echo '/><label for="TamCalcas52"> 52 / EGG</label></div>
 if(strpos($dadosEstilo['tamCalca'],'54') !== false){echo ' checked';}
 echo '/><label for="TamCalcas54"> 54 / EGG</label></div>';
 //<div class="divCheck"><label for="outroTamsCalcas">Outro: </label><input type="text" name="outroTamsCalcas" id="outroTamsCalcas"/></div>
-echo '<div class="tituloLongo">Com qual forma de corpo você mais se identifica?</div>
-<img class="imgInForm" src="/imgs/formatoCorpo.jpg"/>
-<div class="divCheck">
-<input type="radio" name="formaCorpo" id="corpoAmpulheta" value="corpoAmpulheta"';
-if($dadosEstilo['formaCorpo'] == 'corpoAmpulheta') {echo ' checked';}
-echo '/><label for="corpoAmpulheta">
-Ampulheta (ombros e quadril do mesmo tamanho e cintura mais fina)
-</label></div>
+echo '
+<div class="justF">
+    <div class="tituloLongo">Com qual forma de corpo você mais se identifica?</div>
+    <img class="imgInForm" src="/imgs/formatoCorpo.jpg"/>
+    <div class="divCheck">
+    <input type="radio" name="formaCorpo" id="corpoAmpulheta" value="corpoAmpulheta"';
+    if($dadosEstilo['formaCorpo'] == 'corpoAmpulheta') {echo ' checked';}
+    echo '/><label for="corpoAmpulheta">
+    Ampulheta (ombros e quadril do mesmo tamanho e cintura mais fina)
+    </label></div>
 
-<div class="divCheck">
-<input type="radio" name="formaCorpo" id="corpoTriangPera" value="corpoTriangPera"';
-if($dadosEstilo['formaCorpo'] == 'corpoTriangPera') {echo ' checked';}
-echo '/>
-<label for="corpoTriangPera">
-Triângulo ou Pera (quadris mais largos que a cintura e o ombro)
-</label></div>
+    <div class="divCheck">
+    <input type="radio" name="formaCorpo" id="corpoTriangPera" value="corpoTriangPera"';
+    if($dadosEstilo['formaCorpo'] == 'corpoTriangPera') {echo ' checked';}
+    echo '/>
+    <label for="corpoTriangPera">
+    Triângulo ou Pera (quadris mais largos que a cintura e o ombro)
+    </label></div>
 
-<div class="divCheck">
-<input type="radio" name="formaCorpo" id="corpoRetangulo" value="corpoRetangulo"';
-if($dadosEstilo['formaCorpo'] == 'corpoRetangulo') {echo ' checked';}
-echo '/>
-<label for="corpoRetangulo">
-Retângulo (ombros, quadril e cintura praticamente da mesma medida)
-</label></div>
+    <div class="divCheck">
+    <input type="radio" name="formaCorpo" id="corpoRetangulo" value="corpoRetangulo"';
+    if($dadosEstilo['formaCorpo'] == 'corpoRetangulo') {echo ' checked';}
+    echo '/>
+    <label for="corpoRetangulo">
+    Retângulo (ombros, quadril e cintura praticamente da mesma medida)
+    </label></div>
 
-<div class="divCheck">
-<input type="radio" name="formaCorpo" id="corpoOval" value="corpoOval"';
-if($dadosEstilo['formaCorpo'] == 'corpoOval') {echo ' checked';}
-echo '/>
-<label for="corpoOval">
-Oval (região da cintura é maior ou mais alinhada com o quadril)
-</label></div>
+    <div class="divCheck">
+    <input type="radio" name="formaCorpo" id="corpoOval" value="corpoOval"';
+    if($dadosEstilo['formaCorpo'] == 'corpoOval') {echo ' checked';}
+    echo '/>
+    <label for="corpoOval">
+    Oval (região da cintura é maior ou mais alinhada com o quadril)
+    </label></div>
 
-<div class="divCheck">
-<input type="radio" name="formaCorpo" id="corpoTriangInvert" value="corpoTriangInvert"';
-if($dadosEstilo['formaCorpo'] == 'corpoTriangInvert') {echo ' checked';}
-echo '/>
-<label for="corpoTriangInvert">
-Triângulo Invertido (ombros mais largos que a cintura e o quadril)
-</label></div>
-
+    <div class="divCheck">
+    <input type="radio" name="formaCorpo" id="corpoTriangInvert" value="corpoTriangInvert"';
+    if($dadosEstilo['formaCorpo'] == 'corpoTriangInvert') {echo ' checked';}
+    echo '/>
+    <label for="corpoTriangInvert">
+    Triângulo Invertido (ombros mais largos que a cintura e o quadril)
+    </label></div>
+</div>
 
 <div>
 <div class="tituloCurto">Clássico / Tradicional</div>
@@ -144,6 +172,7 @@ for ($i=1; $i <= 5 ; $i++) {
 echo '
 </div>
 </div>
+
 <div>
 <div class="tituloCurto">Criativo</div>
 <img class="imgInForm" src="/imgs/Look-Criativo.png"/>
@@ -162,6 +191,8 @@ for ($i=1; $i <= 5 ; $i++) {
 echo '
 </div>
 </div>
+
+
 <div>
 <div class="tituloCurto">Elegante</div>
 <img class="imgInForm" src="/imgs/Look-Elegante.png"/>
@@ -180,6 +211,8 @@ for ($i=1; $i <= 5 ; $i++) {
 echo '
 </div>
 </div>
+
+
 <div>
 <div class="tituloCurto">Esportivo / Natural</div>
 <img class="imgInForm" src="/imgs/Look-Natural.png"/>
@@ -198,6 +231,7 @@ for ($i=1; $i <= 5 ; $i++) {
 echo '
 </div>
 </div>
+
 <div>
 <div class="tituloCurto">Moderno / Dramático</div>
 <img class="imgInForm" src="/imgs/Look-Moderno.png"/>
@@ -216,6 +250,7 @@ for ($i=1; $i <= 5 ; $i++) {
 echo '
 </div>
 </div>
+
 <div>
 <div class="tituloCurto">Romântico</div>
 <img class="imgInForm" src="/imgs/Look-Romantico.png"/>
@@ -234,6 +269,7 @@ for ($i=1; $i <= 5 ; $i++) {
 echo '
 </div>
 </div>
+
 <div>
 <div class="tituloCurto">Sexy</div>
 <img class="imgInForm" src="/imgs/Look-Sexy.png"/>
@@ -252,6 +288,7 @@ for ($i=1; $i <= 5 ; $i++) {
 echo '
 </div>
 </div>
+
 <div>
 <div class="tituloLongo">Quais os tipos de estampas que mais te agradam?</div>
 <div class="rowEstampas">
@@ -323,55 +360,53 @@ echo '
     <input type="text" name="estAgradaOutra" id="estAgradaOutra" value="'.$dadosEstilo['estAgradaOutra'].'"/>
 </div>
 <div>
-    <div class="tituloLongo">Quais de cores (ou estampas) que você prefere <span class="evitar">evitar</span> no seu guarda roupa?</div>
+    <div class="tituloLongo">Quais cores (ou estampas) que você prefere <span class="evitar">evitar</span> no seu guarda roupa?</div>
     <input type="text" name="corEvita" id="evitaCores" value="'.$dadosEstilo['corEvita'].'"/>
 </div>';
-if($_SESSION['genero@agitoai'] == 'F'){
-    echo '
-    <div>
-        <div class="tituloLongo">Quais modelagens você <span class="evitar">evita</span> no seu guarda roupa? (pode marcar mais de uma opção)</div>
-        <div class="divCheck"><input type="checkbox" name="evitaMod1" id="evitaModelagem-Decotes" value="Decote"';
-        if(strpos($dadosEstilo['modelagemEvita'],'Decote') !== false){echo ' checked';}
-        echo '/>
-        <label for="evitaModelagem-Decotes">Decotes</label></div>
-        <div class="divCheck"><input type="checkbox" name="evitaMod2" id="evitaModelagem-coladasCorpo" value="ColadaCorpo"';
-        if(strpos($dadosEstilo['modelagemEvita'],'ColadaCorpo') !== false){echo ' checked';}
-        echo '/>
-        <label for="evitaModelagem-coladasCorpo">Peças coladas no Corpo</label></div>
-        <div class="divCheck"><input type="checkbox" name="evitaMod3" id="evitaModelagem-curtas" value="Curtas"';
-        if(strpos($dadosEstilo['modelagemEvita'],'Curtas') !== false){echo ' checked';}
-        echo '/>
-        <label for="evitaModelagem-curtas">Peças curtas</label></div>
-        <div class="divCheck"><input type="checkbox" name="evitaMod4" id="evitaModelagem-mostramBarriga" value="MostraBarriga"';
-        if(strpos($dadosEstilo['modelagemEvita'],'MostraBarriga') !== false){echo ' checked';}
-        echo '/>
-        <label for="evitaModelagem-mostramBarriga">Peças que mostre barriga</label></div>
-        <div class="divCheck"><input type="checkbox" name="evitaMod5" id="evitaModelagem-cosBaixo" value="CosBaixo"';
-        if(strpos($dadosEstilo['modelagemEvita'],'CosBaixo') !== false){echo ' checked';}
-        echo '/>
-        <label for="evitaModelagem-cosBaixo">Peças que tenham cós baixo</label></div>
-        <div class="divCheck"><input type="checkbox" name="evitaMod6" id="evitaModelagem-alcasFinas" value="AlcasFinas"';
-        if(strpos($dadosEstilo['modelagemEvita'],'AlcasFinas') !== false){echo ' checked';}
-        echo '/>
-        <label for="evitaModelagem-alcasFinas">Alças Finas</label></div>
-        <div class="divCheck"><input type="checkbox" name="evitaMod7" id="evitaModelagem-amplas" value="Amplas"';
-        if(strpos($dadosEstilo['modelagemEvita'],'Amplas') !== false){echo ' checked';}
-        echo '/>
-        <label for="evitaModelagem-amplas">Peças muito amplas</label></div>
-        <div class="divCheck"><input type="checkbox" name="evitaMod8" id="evitaModelagem-costasNua" value="CostasNuas"';
-        if(strpos($dadosEstilo['modelagemEvita'],'CostasNuas') !== false){echo ' checked';}
-        echo '/>
-        <label for="evitaModelagem-costasNua">Costas Nuas</label></div>
-        <div class="divCheck"><input type="checkbox" name="evitaMod9" id="evitaModelagem-regata" value="Regata"';
-        if(strpos($dadosEstilo['modelagemEvita'],'Regata') !== false){echo ' checked';}
-        echo '/>
-        <label for="evitaModelagem-regata">Regata</label></div>
-        <div id="divModelagemEvitaOutra">
-            <label for="modelagemEvitaOutra">Outra:</label>
-            <input type="text" name="modelagemEvitaOutra" id="modelagemEvitaOutra" value="'.$dadosEstilo['modelagemEvitaOutra'].'"/>
-        </div>
-    </div>';
-}
+echo '
+<div class="justF">
+    <div class="tituloLongo">Quais modelagens você <span class="evitar">evita</span> no seu guarda roupa? (pode marcar mais de uma opção)</div>
+    <div class="divCheck"><input type="checkbox" name="evitaMod1" id="evitaModelagem-Decotes" value="Decote"';
+    if(strpos($dadosEstilo['modelagemEvita'],'Decote') !== false){echo ' checked';}
+    echo '/>
+    <label for="evitaModelagem-Decotes">Decotes</label></div>
+    <div class="divCheck"><input type="checkbox" name="evitaMod2" id="evitaModelagem-coladasCorpo" value="ColadaCorpo"';
+    if(strpos($dadosEstilo['modelagemEvita'],'ColadaCorpo') !== false){echo ' checked';}
+    echo '/>
+    <label for="evitaModelagem-coladasCorpo">Peças coladas no Corpo</label></div>
+    <div class="divCheck"><input type="checkbox" name="evitaMod3" id="evitaModelagem-curtas" value="Curtas"';
+    if(strpos($dadosEstilo['modelagemEvita'],'Curtas') !== false){echo ' checked';}
+    echo '/>
+    <label for="evitaModelagem-curtas">Peças curtas</label></div>
+    <div class="divCheck"><input type="checkbox" name="evitaMod4" id="evitaModelagem-mostramBarriga" value="MostraBarriga"';
+    if(strpos($dadosEstilo['modelagemEvita'],'MostraBarriga') !== false){echo ' checked';}
+    echo '/>
+    <label for="evitaModelagem-mostramBarriga">Peças que mostre barriga</label></div>
+    <div class="divCheck"><input type="checkbox" name="evitaMod5" id="evitaModelagem-cosBaixo" value="CosBaixo"';
+    if(strpos($dadosEstilo['modelagemEvita'],'CosBaixo') !== false){echo ' checked';}
+    echo '/>
+    <label for="evitaModelagem-cosBaixo">Peças que tenham cós baixo</label></div>
+    <div class="divCheck"><input type="checkbox" name="evitaMod6" id="evitaModelagem-alcasFinas" value="AlcasFinas"';
+    if(strpos($dadosEstilo['modelagemEvita'],'AlcasFinas') !== false){echo ' checked';}
+    echo '/>
+    <label for="evitaModelagem-alcasFinas">Alças Finas</label></div>
+    <div class="divCheck"><input type="checkbox" name="evitaMod7" id="evitaModelagem-amplas" value="Amplas"';
+    if(strpos($dadosEstilo['modelagemEvita'],'Amplas') !== false){echo ' checked';}
+    echo '/>
+    <label for="evitaModelagem-amplas">Peças muito amplas</label></div>
+    <div class="divCheck"><input type="checkbox" name="evitaMod8" id="evitaModelagem-costasNua" value="CostasNuas"';
+    if(strpos($dadosEstilo['modelagemEvita'],'CostasNuas') !== false){echo ' checked';}
+    echo '/>
+    <label for="evitaModelagem-costasNua">Costas Nuas</label></div>
+    <div class="divCheck"><input type="checkbox" name="evitaMod9" id="evitaModelagem-regata" value="Regata"';
+    if(strpos($dadosEstilo['modelagemEvita'],'Regata') !== false){echo ' checked';}
+    echo '/>
+    <label for="evitaModelagem-regata">Regata</label></div>
+    <div id="divModelagemEvitaOutra">
+        <label for="modelagemEvitaOutra">Outra:</label>
+        <input type="text" name="modelagemEvitaOutra" id="modelagemEvitaOutra" value="'.$dadosEstilo['modelagemEvitaOutra'].'"/>
+    </div>
+</div>';
 echo '
 <div>
     <div class="tituloLongo">Quais tipos de peças você gostaria de receber? (marque quantas quiser)</div>
@@ -404,9 +439,11 @@ echo '
         if(strpos($dadosEstilo['pecasReceber'],'Casacos') !== false){echo ' checked';}
         echo '/>
         <label for="tipoPeca-Casacos">Casacos</label>
-    </div>';
-    if($_SESSION['genero@agitoai'] == 'F'){
-        echo '
+    </div>
+    ';
+    
+    echo '
+    <div class="justF">
         <div class="divCheck">
             <input type="checkbox" name="tipoPeca5" id="tipoPeca-Saias" value="Saias"';
             if(strpos($dadosEstilo['pecasReceber'],'Saias') !== false){echo ' checked';}
@@ -436,8 +473,17 @@ echo '
             if(strpos($dadosEstilo['pecasReceber'],'Bolsas') !== false){echo ' checked';}
             echo '/>
             <label for="tipoPeca-Bolsas">Bolsas</label>
-        </div>';
-    }
+        </div>
+    </div>';
+    echo '
+    <div class="divCheck">
+        <input type="checkbox" name="tipoPeca11" id="tipoPeca-Calcados" value="Calcados"';
+        if(strpos($dadosEstilo['pecasReceber'],'Calcados') !== false){echo ' checked';}
+        echo '/>
+        <label for="tipoPeca-Calcados">Calçados</label>
+    </div>
+    <input type="hidden" name="totTipoPecas" id="totTipoPecas" value="11"/>
+    ';
     echo '<div id="divCheck">
         <label for="outroTipoPeca">Outra:</label>
         <input type="text" name="pecasReceberOutra" id="outroTipoPeca" value="'.$dadosEstilo['pecasReceberOutra'].'"/>
@@ -475,15 +521,15 @@ echo '
         echo '/>
         <label for="ocasiao-Casual">Casual / Dia a dia</label>
     </div>
-    <div id="divCheck">
+    <div>
         <label for="ocasiaoOutra">Outra:</label>
         <input type="text" name="ocasiaoOutra" id="ocasiaoOutra" value="'.$dadosEstilo['ocasiaoOutra'].'"/>
     </div>
 </div>
 <div>
     <div class="tituloLongo">Quais as marcas com as quais você mais se identifica? (marque quantas quiser)</div>';
-    if($_SESSION['genero@agitoai'] == 'F'){
-        echo '
+    echo '
+    <div class="justF">
         <div class="divCheck">
         <input type="checkbox" name="marca1" id="marca-Farm" value="Farm"';
         if(strpos($dadosEstilo['marcas'],'Farm') !== false){echo ' checked';}
@@ -531,9 +577,11 @@ echo '
             if(strpos($dadosEstilo['marcas'],'MissBella') !== false){echo ' checked';}
             echo '/>
             <label for="marca-MissBella">Miss Bella</label>
-        </div>';
-    } else {
-        echo '
+        </div>
+    </div>
+    ';
+    echo '
+    <div class="justM">
         <div class="divCheck">
             <input type="checkbox" name="marca9" id="marca-Reserva" value="Reserva"';
             if(strpos($dadosEstilo['marcas'],'Reserva') !== false){echo ' checked';}
@@ -552,8 +600,9 @@ echo '
             echo '/>
             <label for="marca-Foxton">Foxton</label>
         </div>
-        ';
-    }
+    </div>
+    ';
+    
     echo '
     <div class="divCheck">
         <input type="checkbox" name="marca12" id="marca-Ellus" value="Ellus"';
@@ -568,14 +617,15 @@ echo '
         <label for="marca-VideBula">Vide Bula</label>
     </div>
     <input type="hidden" name="totMarcas" id="totMarcas" value="13"/>
-    <div id="divCheck">
+    <div>
     <label for="marcasOutra">Outra:</label>
     <input type="text" name="marcasOutra" id="marcasOutra" value="'.$dadosEstilo['marcasOutra'].'"/>
     </form>
     </div>
 </div>
 </br></br>
+<script>FouM("'.$idGen.'")</script>
 <span class="button butAnt" name="butAnt3" id="butAnt3">ANTERIOR</span>
-<span class="button butProx" name="butProx3" id="butProx3">FINALIZAR</span>
+<span class="button butProx" name="butProx3" id="butProx3">PRÓXIMA</span>
 ';
 include '../App/Views/footer.php';

@@ -34,7 +34,7 @@ class Mailer extends Model
         $mail->setFrom('agito@agitoai.com.br', 'Agito Aí');
         //$mail->addAddress('agito@lojaagito.com.br');
         $mail->addAddress('breno.oliveira.ufv@gmail.com');
-        $mail->addAddress('contatoagitoloja@gmail.com');
+        //$mail->addAddress('contatoagitoloja@gmail.com');
         $mail->isHTML(true);                           // Set email format to HTML
         $mail->Subject = 'Agito Aí: '.$lnDados['nomeCompleto'];
         $body = '<!DOCTYPE html><html><head><style>
@@ -56,10 +56,6 @@ class Mailer extends Model
         $body .= '<p>'.$lnDados['dataNasc'].'</p><br>';
         $body .= '<h3>Endereço: </h3>';
         $body .= '<p>'.$lnDados['endereco'].'</p><br>';
-        $body .= '<h3>Número: </h3>';
-        $body .= '<p>'.$lnDados['num'].'</p><br>';
-        $body .= '<h3>Bairro: </h3>';
-        $body .= '<p>'.$lnDados['bairro'].'</p><br>';
         $body .= '<h3>Cidade: </h3>';
         $body .= '<p>'.$lnDados['cidade'].'</p><br>';
         $body .= '<h3>Gênero: </h3>';
@@ -74,8 +70,6 @@ class Mailer extends Model
         $body .= '<p>'.$lnDados['redeSocial'].'</p><br>';
         $body .= '<h3>Altura: </h3>';
         $body .= '<p>'.number_format($lnEstilo['altura'],2,',','.').'</p><br>';
-        $body .= '<h3>Numeração Calçado: </h3>';
-        $body .= '<p>'.$lnEstilo['numCalcado'].'</p><br>';
         $body .= '<h3>Tamanho de Blusa: </h3>';
         $body .= '<p>'.$lnEstilo['tamBlusa'].'</p><br>';
         $body .= '<h3>Tamanho de Calça: </h3>';
@@ -165,8 +159,7 @@ class Mailer extends Model
             'Vestidos' => 'Vestidos',
             'Macacoes' => 'Macacões',
             'Acessorios' => 'Acessórios',
-            'Bolsas' => 'Bolsas',
-            'Calcados' => 'Calçados'
+            'Bolsas' => 'Bolsas'
         ];
         $pecasReceberAr = explode('/', $lnEstilo['pecasReceber']);
         $i = 1;

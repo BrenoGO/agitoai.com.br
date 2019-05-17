@@ -1,6 +1,6 @@
 $(document).ready(() => {
     $('#butAnt2').on('click', e => {
-        window.location.href="/";
+        window.location.href="/Estilo/Index";
     })
     $('#butProx2').on('click', e => {
         var boolForm = true;
@@ -25,5 +25,19 @@ $(document).ready(() => {
     });
     $('#cep').on('keyup', e=> {
         formatar('#cep', '#####-###', e.currentTarget.value);
+    });
+    $('#cep').on('change', e=> {
+        const cep = e.currentTarget.value;
+        $.post('/javascript/DadosCadastrais/ajaxVerCep.php', {cep}, response => {
+            const array = response.split(',');
+            if(array[2]){
+                $('#bairro').val(array[2]);
+                $('#endereco').val(array[3]);
+            }
+            if(array[1]){
+                $('#cidade').val(array[0]);
+                //$('#UF').val(array[1]); //UF ainda não está no formulário
+            }
+        })
     });
 })

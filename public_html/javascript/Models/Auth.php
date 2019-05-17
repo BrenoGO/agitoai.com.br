@@ -10,15 +10,9 @@ class Auth extends Model
     {
         $mail = $_POST['seuemail'];
         $pass = MD5($_POST['senha']);
-        $boolAdmin = isset($_POST['Admin']) ? true : false;
-
         $db = static::getDB();
         $qr = 'select * from usuarios where email=? and senha=?';
         $values = [$mail, $pass];
-        if($boolAdmin){
-            $qr .= ' and acesso like ?';
-            $values = [$mail, $pass, '%Admin%'];
-        }
         $stmt=$db->prepare($qr);
         $stmt->execute($values);
         if($stmt->rowCount($stmt) <= 0){

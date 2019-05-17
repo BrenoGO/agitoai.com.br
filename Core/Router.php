@@ -35,6 +35,9 @@ class Router
     
     public function match($url)
     {
+        // echo '<pre>';
+        // var_dump($this);
+        // echo '</pre>';
         foreach ($this->routes as $route => $params) {
             if (preg_match($route, $url, $matches)) {
                 foreach ($matches as $key => $match) {
